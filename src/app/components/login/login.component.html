@@ -1,0 +1,42 @@
+<div class="row justify-content-md-center">
+	<div class="col-xl-4 col-sm-12">
+		<h1>{{maintitle}}</h1>
+	</div>	
+</div>
+
+<div *ngIf="error" class="row justify-content-md-center">
+	<div class="col-xl-4 col-sm-12">
+		<div class="alert alert-danger">{{error}}</div>
+	</div>	
+</div>
+
+<div class="row justify-content-md-center">
+	<div class="col-xl-4 col-sm-12">
+	  <form name="formLogin" (ngSubmit)="login()" #f="ngForm" novalidate>
+	    <div class="form-group row">
+	      <label for="user_email" class="col-sm-3 col-form-label">Correo Electronico</label>
+	      <div class="col-sm-9">
+	        <input type="email" name="user_email" #user_email="ngModel" [(ngModel)]="model.user_email" class="form-control" id="user_email" placeholder="Email" required>
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <label for="user_pass" class="col-sm-3 col-form-label">Contraseña</label>
+	      <div class="col-sm-9">
+	        <input type="password" name="user_pass" #user_pass="ngModel" [(ngModel)]="model.user_pass" class="form-control" id="user_pass" placeholder="Contraseña" required>
+	      </div>
+	    </div>
+	    <div class="form-group row">
+	      <div class="offset-sm-3 col-sm-9">
+	        <button [disabled]="loading" type="submit" class="btn btn-primary">Ingresar</button>
+	      </div>
+	    </div>
+	  </form>
+	</div>	
+</div>
+
+<div class="row justify-content-md-center">
+	<div class="col-xl-4 col-sm-12">
+		<p>¿Olvidaste tu Contraseña? <a href="">Recuperala aqui!!</a></p>
+		<p>¿No tienes una cuenta? <a href="">Registrarse</a></p>
+  	</div>	
+</div>
