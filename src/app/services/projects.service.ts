@@ -16,11 +16,8 @@ export class ProjectsService{
 		this.url = GLOBAL.url;
 	}
 
-	getProjects(id_user){
-		this.token = localStorage.getItem(GLOBAL.token_name);
-		let headers = new Headers({ 'APP-TOKEN': this.token });
-    let options = new RequestOptions({ headers: headers });
-		return this._http.get(this.url+'projects/listar/'+id_user, options).map(res => res.json());
+	getMyProjects(id_user){
+		return this._http.get(this.url+'projects/listar/'+id_user, this.getOptions()).map(res => res.json());
 	}
 
 	private error(error:any){

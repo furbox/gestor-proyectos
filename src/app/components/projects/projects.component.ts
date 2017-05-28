@@ -31,7 +31,7 @@ export class ProjectsComponent{
     getMyProjects(){
       this.user_info = this._auth.getUserData();
       console.log(this.user_info);
-      this._servicio.getProjects(this.user_info.user_id).subscribe(
+      this._servicio.getMyProjects(this.user_info.user_id).subscribe(
         result => {
           console.log(result);
         },error => {
