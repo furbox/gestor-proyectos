@@ -25,6 +25,10 @@ export class ProjectsComponent{
 			private _servicio: ProjectsService,
 			private _router: Router
 		){
+
+    }
+
+    ngOnInit(){
       this.getMyProjects();
     }
 
@@ -38,7 +42,4 @@ export class ProjectsComponent{
           console.log(<any>error);
         });
     }
-
-
-
 }

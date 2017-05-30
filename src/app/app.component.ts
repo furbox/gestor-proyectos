@@ -9,5 +9,10 @@ import {AccessService} from './services/access.service';
 })
 export class AppComponent {
     title = 'Go Project';
+    is_login:boolean = false;
     constructor(private _auth: AccessService){}
+    ngOnInit(){
+      this.is_login = this._auth.hasToken();
+      console.log(this.is_login);
+    }
 }
